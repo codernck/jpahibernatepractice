@@ -2,7 +2,7 @@ package com.jpahib.learnbgnr.Hib54JPABasics;
 
 import javax.persistence.Persistence;
 
-import entity.Meca;
+import entity.Unit;
 
 /**
  * Hello world!
@@ -22,15 +22,24 @@ public class App
     	/*Item order = new Item();
     	order.setName("Grapes");*/
     	
-    	Meca meca = new Meca();
-    	meca.setName("butter");
+    	/*Meca meca = new Meca();
+    	meca.setName("butter");*/
+    	
+    	/*Event event = new Event();
+    	event.setName("Coding");*/
+    	
+    	Unit unit = new Unit();
+    	unit.setName("Metric");
     	
     	try {
 			en.getTransaction().begin();
 			
 			//en.persist(sku1);
 			//en.persist(order);
-			en.persist(meca);
+			//en.persist(meca);
+			//en.persist(event);
+			en.persist(unit);
+			
 			
 			en.getTransaction().commit();
 			en.close();

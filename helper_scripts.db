@@ -47,3 +47,25 @@ CREATE TABLE `meca_keygen` (
   `key_value` int DEFAULT NULL,
   PRIMARY KEY (`key_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*
+	For demonstration of Custom ID generator here we use random string generator
+	here its not integer but string
+*/
+
+CREATE TABLE `event` (
+  `id` varchar(250) NOT NULL,
+  `name` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+/*
+	For demonstration of Custom ID generator here we use hibernate random string generator
+	here its not integer but string
+*/
+CREATE TABLE `unit` (
+  `id` varchar(250) NOT NULL,
+  `name` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
