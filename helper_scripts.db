@@ -1,0 +1,49 @@
+/* SKUItem table for demonstration of the GenerationType IDENTIFIER
+	Note:Here the id field is AUTO-INCREMENT, the hibernate uses this for ID generation
+ */
+CREATE TABLE `skuitem` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+/* For demonstration of the GenerationType Table with standard column default names
+   Note: here we create two tables
+   item_keygen -> is for the ID  
+   sequence_name & next_val are default here which JPA reads by default
+   Order -> is actual table
+*/
+CREATE TABLE `item` (
+  `id` int NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `item_keygen` (
+  `sequence_name` varchar(100) NOT NULL,
+  `next_val` int DEFAULT NULL,
+  PRIMARY KEY (`sequence_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+/* For demonstration of the GenerationType Table with custom(different non standard) column default names
+   Note: here we create two tables
+   meca_keygen -> is for the ID  
+   key_name is custom-mapped name for sequence_name & 
+   key_value is custom-mapped name for the next_val columns which are not default by JPA
+   meca -> is actual table
+*/
+CREATE TABLE `meca` (
+  `id` int NOT NULL,
+  `name` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `meca_keygen` (
+  `key_name` varchar(100) NOT NULL,
+  `key_value` int DEFAULT NULL,
+  PRIMARY KEY (`key_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
